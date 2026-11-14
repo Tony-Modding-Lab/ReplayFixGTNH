@@ -32,3 +32,8 @@
 git clone [https://github.com/Tony-Modding-Lab/ReplayFixGTNH.git](https://github.com/Tony-Modding-Lab/ReplayFixGTNH.git)
 cd ReplayFixGTNH
 gradle build
+```
+The compiled .jar will be located in build/libs/.
+
+License
+Distributed under the GNU General Public License v3.0. See LICENSE for details.
