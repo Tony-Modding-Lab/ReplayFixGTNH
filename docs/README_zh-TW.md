@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/License-GPL%20v3.0-blue.svg)](../LICENSE)
 [![GTNH](https://img.shields.io/badge/GTNH-2.9-orange.svg)](https://github.com/GTNewHorizons/GT-New-Horizons-Modpack)
 
-[English](../README.md) | **繁體中文**
+[English](../README.md) | **繁體中文** | [简体中文](README_zh-CN.md)
 
 **ReplayFixGTNH** 是一個專為 **GTNH (GregTech: New Horizons) 2.9** 整合包設計的輕量級 Java CoreMod。主要用來解決現代化啟動器或 LWJGL 3 環境下，因傳統顯示呼叫不相容導致的閃退與渲染問題。
 
