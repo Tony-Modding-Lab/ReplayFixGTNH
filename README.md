@@ -4,6 +4,8 @@
 [![License](https://img.shields.io/badge/License-GPL%20v3.0-blue.svg)](LICENSE)
 [![GTNH](https://img.shields.io/badge/GTNH-2.9-orange.svg)](https://github.com/GTNewHorizons/GT-New-Horizons-Modpack)
 
+**English** | [繁體中文](docs/README_zh-TW.md)
+
 **ReplayFixGTNH** is a lightweight Java CoreMod designed for **GTNH (GregTech: New Horizons) 2.9** to resolve LWJGL Display compatibility issues with modern launchers and LWJGL 3.
 
 ---
