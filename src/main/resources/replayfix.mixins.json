@@ -1,11 +1,13 @@
 {
-  "required": true,
+  "required": false ,
   "minVersion": "0.8.5",
   "package": "com.github.tonymoddinglab.replayfix.mixin",
+  "plugin": "com.github.tonymoddinglab.replayfix.mixin.ReplayFixMixinPlugin",
+  "refmap": "replayfix.refmap.json",
+  "target": "@env(DEFAULT)",
   "compatibilityLevel": "JAVA_8",
   "mixins": [],
   "client": [
-    "MixinReplayMod"
-  ],
-  "server": []
+
+  ]
 }

@@ -1,7 +1,9 @@
 package com.github.tonymoddinglab.replayfix;
 
+import com.github.tonymoddinglab.replayfix.client.MissingModNotifier;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,5 +24,12 @@ public class ReplayFixGTNH {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         LOGGER.info("ReplayFixGTNH loaded successfully.");
+    }
+    @Mod.EventHandler
+    public void postInit(FMLPostInitializationEvent event) {
+        // 僅在客戶端註冊 UI 提醒（避免伺服器端崩潰）
+        if (event.getSide().isClient()) {
+            net.minecraftforge.common.MinecraftForge.EVENT_BUS.register(new MissingModNotifier());
+        }
     }
 }

@@ -76,12 +76,16 @@ compileKotlin {
 
 jar {
     manifest.attributes(
+            "FMLCorePlugin": "com.github.tonymoddinglab.replayfix.core.ReplayFixLoadingPlugin",
             "FMLCorePluginContainsFMLMod": "true",
             "ForceLoadAsMod": "true",
-            "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
             "MixinConfigs": "replayfix.mixins.json"
     )
 }
+tasks.named('runClient') {
+    jvmArgs("-Dfml.coreMods.load=com.github.tonymoddinglab.replayfix.core.ReplayFixLoadingPlugin")
+}
+
 def rfgTaskMappings = [
         'compilePatchedMcKotlin'                  : 'decompressDecompiledSources',
         'kaptGenerateStubsPatchedMcKotlin'        : 'decompressDecompiledSources',
