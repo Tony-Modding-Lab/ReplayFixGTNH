@@ -1,7 +1,7 @@
 # ReplayFixGTNH
 
 [![Java Version](https://img.shields.io/badge/Java-8-blue.svg)](https://www.oracle.com/java/)
-[![License](https://img.shields.io/badge/License-GPL%20v3.0-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-LGPL%20v2.1-blue.svg)](LICENSE)
 [![GTNH](https://img.shields.io/badge/GTNH-2.9-orange.svg)](https://github.com/GTNewHorizons/GT-New-Horizons-Modpack)
 
 **English** | [繁體中文](docs/README_zh-TW.md) | [简体中文](README_zh-CN.md)
@@ -36,4 +36,4 @@ gradle build
 The compiled .jar will be located in build/libs/.
 
 License
-Distributed under the GNU General Public License v3.0. See LICENSE for details.
+Distributed under the GNU Lesser General Public License v2.1. See LICENSE for details.
