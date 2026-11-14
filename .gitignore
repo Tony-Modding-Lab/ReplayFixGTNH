@@ -1,0 +1,57 @@
+### IntelliJ IDEA ###
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### Kotlin ###
+.kotlin
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+# Gradle 暫存與建置產物
+.gradle/
+build/
+bin/
+
+# IDE 設定檔（如果你是用 IntelliJ IDEA 或 Eclipse）
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+
+# 作業系統暫存檔
+.DS_Store
+Thumbs.db
+# IntelliJ IDEA 本機設定檔
+.idea/
+*.iml
+
+# Minecraft 測試執行環境與原生函式庫
+run/
+
+# Gradle 建置與暫存檔
+.gradle/
+build/

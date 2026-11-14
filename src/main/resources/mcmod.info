@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "replayfixgtnh",
+    "name": "ReplayFixGTNH",
+    "description": "Compatibility and fix patches for ReplayMod in GTNH.",
+    "version": "1.0.0-GTNH",
+    "mcversion": "1.7.10",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["Juice Studio"],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": [
+      "forgelin"
+    ]
+  }
+]
