@@ -32,3 +32,8 @@
 git clone [https://github.com/Tony-Modding-Lab/ReplayFixGTNH.git](https://github.com/Tony-Modding-Lab/ReplayFixGTNH.git)
 cd ReplayFixGTNH
 gradle build
+```
+编译完成后的 .jar 文件会存放在 build/libs/ 文件夹中。
+
+开源协议
+本项目采用 GNU General Public License v3.0 协议发布。详情请参阅 LICENSE 文件。
