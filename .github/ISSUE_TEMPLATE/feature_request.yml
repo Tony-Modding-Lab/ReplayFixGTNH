@@ -1,0 +1,13 @@
+name:  Feature Request
+description: Suggest a new feature or compatibility enhancement for ReplayFixGTNH
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature Description
+      description: Describe the feature or improvement you would like to see, and what problem it solves.
+      placeholder: I would like to see support for...
+    validations:
+      required: true
