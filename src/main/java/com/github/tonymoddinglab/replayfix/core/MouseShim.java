@@ -32,11 +32,11 @@ public class MouseShim {
         return Mouse.next();
     }
 
-    public static boolean getEventButton() {
-        return Mouse.getEventButtonState(); // 相容舊版事件狀態查詢
+    public static boolean getEventButtonState() {
+        return Mouse.getEventButtonState();
     }
 
-    public static int getEventButtonState() {
+    public static int getEventButton() {
         return Mouse.getEventButton();
     }
 
@@ -50,10 +50,6 @@ public class MouseShim {
 
     public static int getEventDWheel() {
         return Mouse.getEventDWheel();
-    }
-
-    public static long getEventNanoseconds() {
-        return Mouse.getEventNanoseconds();
     }
 
     public static boolean isCreated() {
@@ -70,5 +66,16 @@ public class MouseShim {
 
     public static void setCursorPosition(int new_x, int new_y) {
         Mouse.setCursorPosition(new_x, new_y);
+    }
+
+    /**
+     * 檢查滑鼠是否在視窗範圍內（避免事件誤判）
+     */
+    public static boolean isInsideWindow() {
+        try {
+            return Mouse.isInsideWindow();
+        } catch (Throwable e) {
+            return true; // 若環境不支援則預設回傳 true
+        }
     }
 }

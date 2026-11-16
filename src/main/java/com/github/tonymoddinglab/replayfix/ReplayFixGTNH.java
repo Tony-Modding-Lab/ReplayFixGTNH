@@ -1,6 +1,7 @@
 package com.github.tonymoddinglab.replayfix;
 
 import com.github.tonymoddinglab.replayfix.client.MissingModNotifier;
+import com.github.tonymoddinglab.replayfix.client.ReplayButtonInjector;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -30,6 +31,8 @@ public class ReplayFixGTNH {
         // 僅在客戶端註冊 UI 提醒（避免伺服器端崩潰）
         if (event.getSide().isClient()) {
             net.minecraftforge.common.MinecraftForge.EVENT_BUS.register(new MissingModNotifier());
+            // 將重播按鈕注入器也一起在這裡註冊
+            net.minecraftforge.common.MinecraftForge.EVENT_BUS.register(new ReplayButtonInjector());
         }
     }
 }

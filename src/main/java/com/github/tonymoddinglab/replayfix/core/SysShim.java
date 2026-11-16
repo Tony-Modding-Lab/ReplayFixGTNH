@@ -4,23 +4,14 @@ import org.lwjglx.Sys;
 
 public class SysShim {
 
-    /**
-     * 取得高精度時間（毫秒）
-     */
     public static long getTime() {
         return System.currentTimeMillis();
     }
 
-    /**
-     * 取得計時器頻率
-     */
     public static long getTimerResolution() {
         return 1000L;
     }
 
-    /**
-     * 安全開啟網址（用於導向官網下載頁面）
-     */
     public static boolean openURL(String url) {
         try {
             Sys.openURL(url);
@@ -29,5 +20,16 @@ public class SysShim {
             e.printStackTrace();
             return false;
         }
+    }
+
+    /**
+     * 取得作業系統類型（輔助相容判斷）
+     */
+    public static String getος() {
+        String os = System.getProperty("os.name").toLowerCase();
+        if (os.contains("win")) return "WINDOWS";
+        if (os.contains("mac")) return "MACOS";
+        if (os.contains("nix") || os.contains("nux") || os.contains("bsd")) return "LINUX";
+        return "UNKNOWN";
     }
 }
