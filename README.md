@@ -36,4 +36,5 @@ gradle build
 The compiled .jar will be located in build/libs/.
 
 License
+
 Distributed under the GNU Lesser General Public License v2.1. See LICENSE for details.
