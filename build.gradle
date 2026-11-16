@@ -24,9 +24,18 @@ version = "1.0.0-GTNH"
 group = "com.github.tonymoddinglab"
 
 java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
     toolchain {
-        // GTNH 2.9 搭配 lwjgl3ify 支援現代 Java 環境，採用 Java 17
-        languageVersion = JavaLanguageVersion.of(17)
+        // 使用 Java 25 工具鏈進行建置
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "17" // 保持與 Java 17 目標相容
+        freeCompilerArgs = ["-Xjvm-default=all"]
     }
 }
 
