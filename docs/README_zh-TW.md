@@ -37,4 +37,5 @@ gradle build
 編譯完成後的 .jar 檔案會存放在 build/libs/ 資料夾中。
 
 授權條款
+
 本專案採用 GNU Lesser General Public License v2.1 授權條款發布。詳情請參閱 LICENSE 檔案。
