@@ -21,10 +21,11 @@ apply plugin: 'kotlin'
 apply plugin: 'kotlin-kapt'
 
 version = "1.0.0-GTNH"
-group = "com.juicestudio.gtnh.replayfix"
+group = "com.github.tonymoddinglab"
 
 java {
     toolchain {
+        // GTNH 2.9 搭配 lwjgl3ify 支援現代 Java 環境，採用 Java 17
         languageVersion = JavaLanguageVersion.of(17)
     }
 }
@@ -52,15 +53,17 @@ configurations.all {
 }
 
 dependencies {
-    // 透過一般的 implementation 引入 Mixin，不需要依賴容易出錯的 mixingradle 外掛
+    // Mixin 核心與處理器
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-    implementation 'org.spongepowered:mixin:0.8.5'
+    implementation('org.spongepowered:mixin:0.8.5') {
+        exclude module: 'launchwrapper'
+        exclude module: 'guava'
+        exclude module: 'gson'
+        exclude module: 'commons-io'
+    }
 
-    // 僅在編譯期引入原生 LWJGL 3 API，執行期直接使用 lwjgl3ify 提供的環境
-    compileOnly "org.lwjgl:lwjgl:3.3.3"
-    compileOnly "org.lwjgl:lwjgl-glfw:3.3.3"
-    compileOnly "org.lwjgl:lwjgl-opengl:3.3.3"
-
+    // 透過 lwjgl3ify 提供 1.7.10 環境下的 LWJGL 3 編譯支援
+    compileOnly "com.github.GTNewHorizons:lwjgl3ify:2.1.5:dev"
 }
 
 tasks.withType(JavaCompile).configureEach {
@@ -76,14 +79,15 @@ compileKotlin {
 
 jar {
     manifest.attributes(
-            "FMLCorePlugin": "com.github.tonymoddinglab.replayfix.core.ReplayFixLoadingPlugin",
+            "FMLCorePlugin": "com.juicestudio.gtnh.replayfix.core.ReplayFixLoadingPlugin",
             "FMLCorePluginContainsFMLMod": "true",
             "ForceLoadAsMod": "true",
             "MixinConfigs": "replayfix.mixins.json"
     )
 }
+
 tasks.named('runClient') {
-    jvmArgs("-Dfml.coreMods.load=com.github.tonymoddinglab.replayfix.core.ReplayFixLoadingPlugin")
+    jvmArgs("-Dfml.coreMods.load=com.juicestudio.gtnh.replayfix.core.ReplayFixLoadingPlugin")
 }
 
 def rfgTaskMappings = [

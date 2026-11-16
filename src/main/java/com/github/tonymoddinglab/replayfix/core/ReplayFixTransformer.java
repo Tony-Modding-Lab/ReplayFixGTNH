@@ -27,9 +27,15 @@ public class ReplayFixTransformer implements IClassTransformer {
                 if (insn.getOpcode() == Opcodes.INVOKESTATIC) {
                     MethodInsnNode mInsn = (MethodInsnNode) insn;
                     // 將舊版 LWJGL Display 靜態呼叫重新導向至我們的 DisplayShim
+
                     if (mInsn.owner.equals("org/lwjgl/opengl/Display")) {
                         mInsn.owner = "com/github/tonymoddinglab/replayfix/core/DisplayShim";
+                    } else if (mInsn.owner.equals("org/lwjgl/Sys")) {
+                        mInsn.owner = "com/github/tonymoddinglab/replayfix/core/SysShim";
+                    } else if (mInsn.owner.equals("org/lwjgl/input/Mouse")) {
+                        mInsn.owner = "com/github/tonymoddinglab/replayfix/core/MouseShim";
                     }
+
                 }
             }
         }

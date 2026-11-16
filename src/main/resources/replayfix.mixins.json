@@ -1,6 +1,6 @@
 {
-  "required": false ,
-  "minVersion": "0.8.5",
+  "required": true,
+  "minVersion": "0.8.5-GTNH",
   "package": "com.github.tonymoddinglab.replayfix.mixin",
   "plugin": "com.github.tonymoddinglab.replayfix.mixin.ReplayFixMixinPlugin",
   "refmap": "replayfix.refmap.json",
