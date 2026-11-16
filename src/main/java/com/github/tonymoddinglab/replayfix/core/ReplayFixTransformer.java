@@ -34,6 +34,8 @@ public class ReplayFixTransformer implements IClassTransformer {
                         mInsn.owner = "com/github/tonymoddinglab/replayfix/core/SysShim";
                     } else if (mInsn.owner.equals("org/lwjgl/input/Mouse")) {
                         mInsn.owner = "com/github/tonymoddinglab/replayfix/core/MouseShim";
+                    } else if (mInsn.owner.equals("org/lwjgl/input/Keyboard")) {
+                        mInsn.owner = "com/github/tonymoddinglab/replayfix/core/KeyboardShim";
                     }
 
                 }
